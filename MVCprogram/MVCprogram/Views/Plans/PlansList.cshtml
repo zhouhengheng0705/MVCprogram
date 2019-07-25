@@ -1,0 +1,19 @@
+﻿@model MVCprogram.Models.PlansListViewModel
+@{
+    ViewBag.Title = "予定一覧";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<title>@ViewBag.Title</title>
+@using (Html.BeginForm("PlansList","Plans", FormMethod.Post, new { @class = "form-horizontal", role="form"}))
+{
+    @Html.AntiForgeryToken()
+    <h5>[検索条件]</h5>
+    <div class="form-group">
+        @Html.LabelFor(m => m.PlanDate, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.PlanDate, new { @class = "form-control"})
+        </div>   
+    </div>
+}
+
