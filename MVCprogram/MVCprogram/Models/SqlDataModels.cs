@@ -11,6 +11,20 @@ namespace MVCprogram.Models
 {
     public class SqlDataModels
     {
+        private string ConnectionString;
+        private SqlTransaction sqlTrans;
+        private SqlConnection sqlConn;
+
+        private string m_UserId = "";
+
+        public SqlDataModels()
+        {
+            this.ConnectionString = (string)ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        }
 
     }
+
+    
+
+
 }
